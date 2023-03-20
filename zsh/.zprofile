@@ -1,3 +1,5 @@
+VIM="nvim"
+
 # Switch to ARM homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
