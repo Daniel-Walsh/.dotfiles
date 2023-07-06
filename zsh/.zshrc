@@ -124,5 +124,10 @@ alias vi=nvim
 alias brew-arm='eval "$(/opt/homebrew/bin/brew shellenv)"'
 alias brew-x86='eval "$(/usr/local/homebrew/bin/brew shellenv)"'
 
+alias tmux-sessioniser="~/.dotfiles/bin/.local/scripts/tmux-sessioniser"
+
+bindkey -s ^f "tmux-sessioniser\n"
+
 export PATH="/usr/local/homebrew/bin/:$PATH"
 
+export CC=/usr/local/Homebrew/opt/llvm/bin/clang

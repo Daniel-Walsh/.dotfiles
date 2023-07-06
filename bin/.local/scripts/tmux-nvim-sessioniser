@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Get current directory in NeoVim
+current_dir=$(nvim --headless -c 'echo expand("%:p:h")' -c 'qa!')
+
+# Get list of directories to select from
+selected_dir=$(find ~ -maxdepth 1 -type d -not -path '*/\.*' -print0 | fzf --prompt="Select directory: " --height=50% --layout=reverse-list --preview='ls {}')
+
+# Check if selected directory is empty
+if [[ -z $selected_dir ]]; then
+    echo "No directory selected"
+    exit 1
+fi
+
+# Get the name of the tmux session based on the selected directory
+session_name=$(basename $selected_dir)
+
+# Check if a tmux session with the same name already exists
+if tmux has-session -t "$session_name" 2>/dev/null; then
+    # Switch to existing session
+    tmux switch-client -t "$session_name"
+else
+    # Create new session and switch to it
+    tmux new-session -s "$session_name" -c "$selected_dir"
+fi
+
+# Change back to original directory in NeoVim
+cd "$current_dir" || exit
+
