@@ -131,3 +131,6 @@ bindkey -s ^f "tmux-sessioniser\n"
 export PATH="/usr/local/homebrew/bin/:$PATH"
 
 export CC=/usr/local/Homebrew/opt/llvm/bin/clang
+
+# To customize prompt, run `p10k configure` or edit ~/Development/Personal/dotfiles/zsh/.p10k.zsh.
+[[ ! -f ~/Development/Personal/dotfiles/zsh/.p10k.zsh ]] || source ~/Development/Personal/dotfiles/zsh/.p10k.zsh
