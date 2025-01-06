@@ -1,0 +1,27 @@
+shell-integration = zsh
+shell-integration-features = no-cursor
+cursor-style = block
+
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 15
+window-inherit-font-size = false
+
+theme = tokyonight-storm
+background-opacity = 0.95
+background-blur-radius = 20
+
+unfocused-split-opacity = 0.6
+unfocused-split-fill = 000
+
+window-theme = system
+window-height = 56
+window-width = 200
+
+macos-option-as-alt = true
+
+# macos-icon = custom-style
+# macos-icon-ghost-color = fff
+# macos-icon-screen-color = 000,333,111,000
+
+# custom-shader = /Users/danwalsh/.config/ghostty/shaders/bloom.glsl
+# custom-shader-animation = always
