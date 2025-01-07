@@ -9,6 +9,11 @@ alias vim='nvim'
 alias vi='nvim'
 alias ls='gls --color=auto --group-directories-first'
 
+# Check if coreutils is installed
+if ! command -v gls &> /dev/null; then
+    echo "You don't have coreutils installed. Run 'brew install coreutils'."
+fi
+
 # Prompt
 export PS1="%(?.%F{blue}⏺.%F{red}⏺)%f %B%{%F{white}%}%1~%b %{%f%}%# %F{yellow}󰄾%f "
 # export PS1="%(?.%F{4}⏺.%F{9}⏺)%f %{%F{39}%}%n%{%F{45}%}@%{%F{51}%}macOS %{%F{195}%}%2~ %{%f%}$ "
